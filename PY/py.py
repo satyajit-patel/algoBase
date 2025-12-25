@@ -225,9 +225,35 @@ num = [1,4,9,16,25]
 """
 
 
+# heap
+nums = [2,1,3,6,5,4]
+print(nums)
 
+import heapq as h
+h.heapify(nums) # nums is now a valid min-heap
+print(nums) # [1, 2, 3, 6, 5, 4]
 
+h.heappush(nums, -1)
+smallest = h.heappop(nums)
+print(smallest)
+threeSmallestEle = h.nsmallest(3, nums)
+print(threeSmallestEle) # [1, 2, 3]
+threeLargestEle = h.nlargest(3, nums)
+print(threeLargestEle)
 
+# binary search
+import bisect as b
+"""
+lower_bound - bisect_left - >= (i.e index of ist number which is >= target)
+upper_bound - bisect_right - > (i.e index of ist number > target)
+"""
+data = [10,20,20,20,30]
+target = 20
+
+lb = b.bisect_left(data, target)
+print(lb) # 1
+ub = b.bisect_right(data, target)
+print(ub) # 4
 
 
 
