@@ -1,5 +1,5 @@
 def count_substring(string, sub_string):
-    init = 0;
+    init = 0
     n = len(string)
     m = len(sub_string)
     count = 0

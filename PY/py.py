@@ -256,11 +256,33 @@ ub = b.bisect_right(data, target)
 print(ub) # 4
 
 
+# itertools
+import itertools as iter
+nums = [1, 2]
 
+lSum = list(iter.accumulate(nums))
+rSum = list(iter.accumulate(reversed(nums)))
 
+print(nums) # [1, 2, 3, 4, 5]
+print(lSum) # [1, 3, 6, 10, 15]
+print(rSum) # [5, 9, 12, 14, 15]
+print(f"-----------")
 
+# Computes the Cartesian product
+colors = ['Red', 'Blue']
+sizes = ['S', 'M']
+print(list(iter.product(colors, sizes)))
+# Output: [('Red', 'S'), ('Red', 'M'), ('Blue', 'S'), ('Blue', 'M')]
 
+# Generates all possible orderings of a group. The order matters
+# Example: All ways to arrange 2 letters from 'ABC'
+print(list(iter.permutations('ABC', 2)))
+# Output: [('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')]
 
+#  Generates all possible selections where the order does NOT matter
+# Example: All ways to choose 2 letters from 'ABC'
+print(list(iter.combinations('ABC', 2)))
+# Output: [('A', 'B'), ('A', 'C'), ('B', 'C')]
 
 
 
