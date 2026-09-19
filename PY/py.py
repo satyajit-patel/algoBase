@@ -285,7 +285,16 @@ print(list(iter.combinations('ABC', 2)))
 # Output: [('A', 'B'), ('A', 'C'), ('B', 'C')]
 
 
+# Generators
+# Creating a list would consume memory for all 1000 values at once. A generator computes values on-demand, saving memory!
 
+# Create a function that returns a list of squares
+def squares_list(n):
+    return [ele ** 2 for ele in range(1, n+1)]
+
+# Create a generator that yields squares
+def squares_generator(n):
+    yield from (ele ** 2 for ele in range(1, n+1))
 
 
 
